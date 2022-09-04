@@ -4,20 +4,21 @@ const {
   ERRORS,
   COMMA_NEWLINE_SPLIT_REGEX,
 } = require("./constant");
-const { getNegativeNumbers, customException } = require("./utils/fns");
+const { getNegativeNumbers, customException, getSplitRegexAndString } = require("./utils/fns");
 
 class StringCalculator {
   add(numbersString) {
     let sum = 0;
     try {
       if (!!numbersString) {
-        const numbersArray = numbersString.split(COMMA_NEWLINE_SPLIT_REGEX);
+        const { numbersArray, newString}  = getSplitRegexAndString(numbersString) 
+
         sum = numbersArray.reduce((total, current) => {
           const currentCharCode = current.charCodeAt();
           let number = current;
 
           if (Number(number) < 0) {
-            const negativeNumbers = getNegativeNumbers(numbersString);
+            const negativeNumbers = getNegativeNumbers(newString);
             throw customException(
               `${ERRORS.NEGATIVES_NOT_ALLOWED}: ${negativeNumbers}`
             );
