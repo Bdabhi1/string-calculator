@@ -2,17 +2,23 @@ const {
   ASCII_CODE_OF_LOWER_A,
   ASCII_CODE_OF_LOWER_Z,
   ERRORS,
-  COMMA_NEWLINE_SPLIT_REGEX,
 } = require("./constant");
-const { getNegativeNumbers, customException, getSplitRegexAndString } = require("./utils/fns");
+const {
+  getNegativeNumbers,
+  customException,
+  getNumberArrayRegexAndString,
+} = require("./utils/fns");
 
 class StringCalculator {
   add(numbersString) {
     let sum = 0;
     try {
+      //if string is empty then no need to go inside simply return zero
       if (!!numbersString) {
-        const { numbersArray, newString}  = getSplitRegexAndString(numbersString) 
+        const { numbersArray, newString } =
+          getNumberArrayRegexAndString(numbersString);
 
+        //return the sum of number and lowercase alphabets
         sum = numbersArray.reduce((total, current) => {
           const currentCharCode = current.charCodeAt();
           let number = current;

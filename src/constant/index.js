@@ -5,6 +5,12 @@ const COMMA_NEWLINE_SPLIT_REGEX = /,|\n/g;
 const ERRORS = {
   NEGATIVES_NOT_ALLOWED: "Negatives not allowed",
 };
+const COMMA = ",";
+const ODD_NUMBER_SIGN = "0//";
+const EVEN_NUMBER_SIGN = "1//";
+const CHANGE_DELIMITER_SIGN = "//";
+const NEW_LINE = "\n";
+const STRING_ZERO = '0'
 
 module.exports = {
   ASCII_CODE_OF_LOWER_A,
@@ -12,4 +18,10 @@ module.exports = {
   MATCH_NEGATIVE_NUMBER_REGEX,
   ERRORS,
   COMMA_NEWLINE_SPLIT_REGEX,
+  COMMA,
+  ODD_NUMBER_SIGN,
+  EVEN_NUMBER_SIGN,
+  CHANGE_DELIMITER_SIGN,
+  NEW_LINE,
+  STRING_ZERO
 };

@@ -68,4 +68,14 @@ describe("String calculator", () => {
       expect(stringCalculator.add("//;\n1;2")).toBe(1 + 2);
     });
   });
+
+  describe("Problem Statement 9", () => {
+    it("Should add method return sum of odd numbers", () => {
+      expect(stringCalculator.add("0//***\n1***2***3***4***10***11")).toBe(1 + 3 + 11);
+    });
+
+    it("Should add method return sum of even numbers", () => {
+      expect(stringCalculator.add("1//***\n1***2***3***4***10***11")).toBe(2 + 4 + 10);
+    });
+  });
 });
