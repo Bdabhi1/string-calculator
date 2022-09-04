@@ -32,4 +32,13 @@ describe("String calculator", () => {
       expect(stringCalculator.add("1,2,a,b,z")).toBe(32);
     });
   });
+
+  describe("Problem Statement 4", () => {
+    it("Should throw an error while calling add with a negative number", () => {
+      expect(() => stringCalculator.add("2,-4,3")).toThrow(Error);
+      expect(() => stringCalculator.add("2,-4,3")).toThrow(
+        new Error(`Negatives not allowed: -4`)
+      );
+    });
+  });
 });
