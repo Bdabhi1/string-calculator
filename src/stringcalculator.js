@@ -16,7 +16,7 @@ class StringCalculator {
           const currentCharCode = current.charCodeAt();
           let number = current;
           if (Number(number) < 0) {
-            throw this.CustomException(`Negatives not allowed: ${number}`);
+            throw this.customException(`Negatives not allowed: ${number}`);
           }
           //check current value is lowercase alphabets or not
           if (
