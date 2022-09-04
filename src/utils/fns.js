@@ -10,7 +10,7 @@ const {
 } = require("../constant");
 
 /**
- * 
+ *
  * @param {*} text: string with number or lowercase alphabets or both
  * @returns: string of negative numbers from string using regex
  */
@@ -20,9 +20,9 @@ function getNegativeNumbers(text) {
 }
 
 /**
- * 
+ *
  * @param {*} message: error message
- * @returns: error with name, message, stack, 
+ * @returns: error with name, message, stack,
  */
 function customException(message) {
   const error = new Error(message);
@@ -30,7 +30,7 @@ function customException(message) {
 }
 
 /**
- * 
+ *
  * @param {*} array: array of numbers
  * @returns: array of odd numbers
  */
@@ -39,8 +39,8 @@ function oddNumbersArray(array) {
 }
 
 /**
- * 
- * @param {*} array: array of numbers 
+ *
+ * @param {*} array: array of numbers
  * @returns: array of even numbers
  */
 function evenNumbersArray(array) {
@@ -48,15 +48,17 @@ function evenNumbersArray(array) {
 }
 
 /**
- * 
+ *
  * @param {*} text: string with number or lowercase alphabets or both
  * @returns: array with number or lowercase alphabets or both and new text
  */
 function getNumberArrayRegexAndString(text) {
   let splitOperator = COMMA_NEWLINE_SPLIT_REGEX;
   let newString = text;
-  const isEvenOrOdd = text.startsWith(ODD_NUMBER_SIGN) || text.startsWith(EVEN_NUMBER_SIGN);
-  const isChangeSplitOperator = text.startsWith(CHANGE_DELIMITER_SIGN) || isEvenOrOdd;
+  const isEvenOrOdd =
+    text.startsWith(ODD_NUMBER_SIGN) || text.startsWith(EVEN_NUMBER_SIGN);
+  const isChangeSplitOperator =
+    text.startsWith(CHANGE_DELIMITER_SIGN) || isEvenOrOdd;
   const firstCharOfstring = text.charAt(0);
 
   if (isChangeSplitOperator) {

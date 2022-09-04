@@ -53,13 +53,17 @@ describe("String calculator", () => {
 
   describe("Problem Statement 6", () => {
     it("Should ignore number if it is greater than 1000", () => {
-      expect(stringCalculator.add("1,2,1001,1000,c,e")).toBe(1 + 2 + 1000 + 3 + 5);
+      expect(stringCalculator.add("1,2,1001,1000,c,e")).toBe(
+        1 + 2 + 1000 + 3 + 5
+      );
     });
   });
 
   describe("Problem Statement 7", () => {
     it("Should allow the add method to handle new lines between numbers", () => {
-      expect(stringCalculator.add("1\n10,40\n1001\na,b")).toBe(1 + 10 + 40 + 1 + 2);
+      expect(stringCalculator.add("1\n10,40\n1001\na,b")).toBe(
+        1 + 10 + 40 + 1 + 2
+      );
     });
   });
 
@@ -71,11 +75,15 @@ describe("String calculator", () => {
 
   describe("Problem Statement 9", () => {
     it("Should add method return sum of odd numbers", () => {
-      expect(stringCalculator.add("0//***\n1***2***3***4***10***11")).toBe(1 + 3 + 11);
+      expect(stringCalculator.add("0//***\n1***2***3***4***10***11")).toBe(
+        1 + 3 + 11
+      );
     });
 
     it("Should add method return sum of even numbers", () => {
-      expect(stringCalculator.add("1//***\n1***2***3***4***10***11")).toBe(2 + 4 + 10);
+      expect(stringCalculator.add("1//***\n1***2***3***4***10***11")).toBe(
+        2 + 4 + 10
+      );
     });
   });
 });

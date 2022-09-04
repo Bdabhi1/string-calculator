@@ -10,7 +10,7 @@ const ODD_NUMBER_SIGN = "0//";
 const EVEN_NUMBER_SIGN = "1//";
 const CHANGE_DELIMITER_SIGN = "//";
 const NEW_LINE = "\n";
-const STRING_ZERO = '0'
+const STRING_ZERO = "0";
 
 module.exports = {
   ASCII_CODE_OF_LOWER_A,
@@ -23,5 +23,5 @@ module.exports = {
   EVEN_NUMBER_SIGN,
   CHANGE_DELIMITER_SIGN,
   NEW_LINE,
-  STRING_ZERO
+  STRING_ZERO,
 };
