@@ -56,4 +56,10 @@ describe("String calculator", () => {
       expect(stringCalculator.add("1,2,1001,1000,c,e")).toBe(1 + 2 + 1000 + 3 + 5);
     });
   });
+
+  describe("Problem Statement 7", () => {
+    it("Should allow the add method to handle new lines between numbers", () => {
+      expect(stringCalculator.add("1\n10,40\n1001\na,b")).toBe(1 + 10 + 40 + 1 + 2);
+    });
+  });
 });

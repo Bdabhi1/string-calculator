@@ -1,4 +1,9 @@
-const { ASCII_CODE_OF_LOWER_A, ASCII_CODE_OF_LOWER_Z, ERRORS } = require("./constant");
+const {
+  ASCII_CODE_OF_LOWER_A,
+  ASCII_CODE_OF_LOWER_Z,
+  ERRORS,
+  COMMA_NEWLINE_SPLIT_REGEX,
+} = require("./constant");
 const { getNegativeNumbers, customException } = require("./utils/fns");
 
 class StringCalculator {
@@ -6,14 +11,16 @@ class StringCalculator {
     let sum = 0;
     try {
       if (!!numbersString) {
-        const numbersArray = numbersString.split(",");
+        const numbersArray = numbersString.split(COMMA_NEWLINE_SPLIT_REGEX);
         sum = numbersArray.reduce((total, current) => {
           const currentCharCode = current.charCodeAt();
           let number = current;
-          
+
           if (Number(number) < 0) {
-            const negativeNumbers = getNegativeNumbers(numbersString)
-            throw customException(`${ERRORS.NEGATIVES_NOT_ALLOWED}: ${negativeNumbers}`);
+            const negativeNumbers = getNegativeNumbers(numbersString);
+            throw customException(
+              `${ERRORS.NEGATIVES_NOT_ALLOWED}: ${negativeNumbers}`
+            );
           }
 
           //check current value is lowercase alphabets or not
@@ -26,7 +33,7 @@ class StringCalculator {
           }
 
           //if number is greater than 1000 it should be ignored
-          number = +number > 1000 ? 0 : +number
+          number = +number > 1000 ? 0 : +number;
           return total + number;
         }, 0);
       }

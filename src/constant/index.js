@@ -1,6 +1,7 @@
 const ASCII_CODE_OF_LOWER_A = 97;
 const ASCII_CODE_OF_LOWER_Z = 122;
 const MATCH_NEGATIVE_NUMBER_REGEX = /-\d+/g;
+const COMMA_NEWLINE_SPLIT_REGEX = /,|\n/g;
 const ERRORS = {
   NEGATIVES_NOT_ALLOWED: "Negatives not allowed",
 };
@@ -10,4 +11,5 @@ module.exports = {
   ASCII_CODE_OF_LOWER_Z,
   MATCH_NEGATIVE_NUMBER_REGEX,
   ERRORS,
+  COMMA_NEWLINE_SPLIT_REGEX,
 };
