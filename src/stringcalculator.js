@@ -2,7 +2,7 @@ const { ASCII_CODE_OF_LOWER_A, ASCII_CODE_OF_LOWER_Z } = require("./constant");
 
 class StringCalculator {
 
-  CustomException(message) {
+  customException(message) {
     const error = new Error(message);
     return error;
   }
