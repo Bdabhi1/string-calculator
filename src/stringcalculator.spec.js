@@ -10,11 +10,11 @@ describe("String calculator", () => {
       expect(stringCalculator.add("")).toBe(0);
     });
 
-    it("Should check add method with one number's string", () => {
+    it("Should check add method with one number", () => {
       expect(stringCalculator.add("1")).toBe(1);
     });
 
-    it("Should check add method with two number's string", () => {
+    it("Should check add method with two number", () => {
       expect(stringCalculator.add("1,2")).toBe(1 + 2);
     });
   });
@@ -24,6 +24,12 @@ describe("String calculator", () => {
       expect(stringCalculator.add("4,8,43,2,6,7,9,6,3,2,4")).toBe(
         4 + 8 + 43 + 2 + 6 + 7 + 9 + 6 + 3 + 2 + 4
       );
+    });
+  });
+
+  describe("Problem Statement 3", () => {
+    it("Should check add method with number and lowercase alphabets", () => {
+      expect(stringCalculator.add("1,2,a,b,z")).toBe(32);
     });
   });
 });
