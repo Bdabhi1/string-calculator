@@ -28,16 +28,25 @@ describe("String calculator", () => {
   });
 
   describe("Problem Statement 3", () => {
-    it("Should check add method with number and lowercase alphabets", () => {
+    it("Should check add method with number and method lowercase alphabets", () => {
       expect(stringCalculator.add("1,2,a,b,z")).toBe(32);
     });
   });
 
   describe("Problem Statement 4", () => {
-    it("Should throw an error while calling add with a negative number", () => {
+    it("Should throw an error while calling add method with a negative number", () => {
       expect(() => stringCalculator.add("2,-4,3")).toThrow(Error);
       expect(() => stringCalculator.add("2,-4,3")).toThrow(
-        new Error(`Negatives not allowed: -4`)
+        new Error("Negatives not allowed: -4")
+      );
+    });
+  });
+
+  describe("Problem Statement 5", () => {
+    it("Should throw an error while calling add method with multiple negative number", () => {
+      expect(() => stringCalculator.add("1,-2,-4,3,-5")).toThrow(Error);
+      expect(() => stringCalculator.add("1,-2,-4,3,-5")).toThrow(
+        new Error("Negatives not allowed: -2,-4,-5")
       );
     });
   });

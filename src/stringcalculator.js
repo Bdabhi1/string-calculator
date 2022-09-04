@@ -1,12 +1,7 @@
-const { ASCII_CODE_OF_LOWER_A, ASCII_CODE_OF_LOWER_Z } = require("./constant");
+const { ASCII_CODE_OF_LOWER_A, ASCII_CODE_OF_LOWER_Z, ERRORS } = require("./constant");
+const { getNegativeNumbers, customException } = require("./utils/fns");
 
 class StringCalculator {
-
-  customException(message) {
-    const error = new Error(message);
-    return error;
-  }
-
   add(numbersString) {
     let sum = 0;
     try {
@@ -16,7 +11,8 @@ class StringCalculator {
           const currentCharCode = current.charCodeAt();
           let number = current;
           if (Number(number) < 0) {
-            throw this.customException(`Negatives not allowed: ${number}`);
+            const negativeNumbers = getNegativeNumbers(numbersString)
+            throw customException(`${ERRORS.NEGATIVES_NOT_ALLOWED}: ${negativeNumbers}`);
           }
           //check current value is lowercase alphabets or not
           if (

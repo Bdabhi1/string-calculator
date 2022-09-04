@@ -1,7 +1,0 @@
-const ASCII_CODE_OF_LOWER_A = 97;
-const ASCII_CODE_OF_LOWER_Z = 122;
-
-module.exports = {
-  ASCII_CODE_OF_LOWER_A,
-  ASCII_CODE_OF_LOWER_Z,
-};
