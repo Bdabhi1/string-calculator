@@ -10,10 +10,12 @@ class StringCalculator {
         sum = numbersArray.reduce((total, current) => {
           const currentCharCode = current.charCodeAt();
           let number = current;
+          
           if (Number(number) < 0) {
             const negativeNumbers = getNegativeNumbers(numbersString)
             throw customException(`${ERRORS.NEGATIVES_NOT_ALLOWED}: ${negativeNumbers}`);
           }
+
           //check current value is lowercase alphabets or not
           if (
             currentCharCode >= ASCII_CODE_OF_LOWER_A &&
@@ -22,7 +24,10 @@ class StringCalculator {
             //substact 96 to get the value of a,b,c... respectively 1,2,3...
             number = currentCharCode - (ASCII_CODE_OF_LOWER_A - 1);
           }
-          return total + +number;
+
+          //if number is greater than 1000 it should be ignored
+          number = +number > 1000 ? 0 : +number
+          return total + number;
         }, 0);
       }
       return sum;

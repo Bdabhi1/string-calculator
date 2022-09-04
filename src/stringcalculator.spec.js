@@ -50,4 +50,10 @@ describe("String calculator", () => {
       );
     });
   });
+
+  describe("Problem Statement 6", () => {
+    it("Should ignore number if it is greater than 1000", () => {
+      expect(stringCalculator.add("1,2,1001,1000,c,e")).toBe(1 + 2 + 1000 + 3 + 5);
+    });
+  });
 });
